@@ -7,6 +7,7 @@
     color: grey;
 }
 
+
 /* nav bar  */
 .margin-left{
     margin-left: 8%;
@@ -36,7 +37,7 @@
     font-size: 23px; 
     color: red;
 }
-.navbarlittle{
+.navbar-little{
     font-size: 8px; 
     color: steelblue;
 }
@@ -81,7 +82,13 @@
     border-left: 1px solid grey;
 }
 
+.grey{
+    color: grey;
+}
 
+.margin-bottom{
+    margin-bottom: 10px;
+}
 
 /* form end */
 
