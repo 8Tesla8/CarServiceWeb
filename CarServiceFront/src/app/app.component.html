@@ -1,31 +1,32 @@
-<nav class="navbar navbar-light bg-light fixed-top" style="opacity: 0.9;">
+<nav class="navbar navbar-light bg-light fixed-top navbarlopacity">
   <!-- left part -->
   <div class="container">
-    <a fxLayoutAlign="start start" class="navbar-brand" style="margin-left: 8%;" href="#">
-      <img src="assets/images/logo.png" alt="Logo" style="width:70px;">
+    <a fxLayoutAlign="start start" class="navbar-brand" class="marginleft" href="#">
+      <img src="assets/images/logo.png" class="logo" alt="Logo">
     </a>
   </div>
   <!-- left part end -->
 
   <!-- right part -->
-  <div fxLayout="row" style="margin-right: 8%;">
+  <div fxLayout="row" class="marginright">
     <div fxLayout="column" fxLayoutAlign="end end">
 
       <!-- first row  -->
       <div fxLayout="row">
-        <a style="font-size: 8px; color: steelblue;" href="url">SCHEDULE AN APPOINTMENT</a>
+        <a class="navbarlittle"  href="url">SCHEDULE AN APPOINTMENT</a>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <a style="font-size: 8px; color: steelblue;" href="url">LOCATE A SERVICE CENTER</a>
+        <a class="navbarlittle" href="url">LOCATE A SERVICE CENTER</a>
+
       </div>
       <!-- first row end-->
 
       <!-- second row -->
       <div fxLayout="row">
         <div fxLayout="column">
-          <span style="font-size: 9px; color: silver;">YOUR AAMCO IS</span>
-          <span style="font-size: 11px; color: grey;">TAYLORSVILLE UT &nbsp;&nbsp;</span>
+          <span class="silvertext">YOUR AAMCO IS</span>
+          <span class="greytext">TAYLORSVILLE UT &nbsp;&nbsp;</span>
         </div>
-        <span style="font-size: 23px; color: red;">(801) 783.32.80</span>
+        <span class="phonetext">(801) 783.32.80</span>
       </div>
       <!-- second row end-->
 
@@ -34,25 +35,25 @@
   </div>
 
   <!-- nav bar menu -->
-  <div class="container-fluid" fxFlex style="border-top: 1px solid"> <br>
+  <div class="container-fluid" fxFlex class="navbarmainmenu"> <br>
     <div fxLayout="row" fxFlex fxLayoutAlign="space-around center">
-      <a style="font-size: 12px; color: steelblue;" href="url">TRANSMISSION SERVICE</a>
-      <a style="font-size: 12px; color: steelblue;" href="url">AUTO CAR & REPAIR</a>
-      <a style="font-size: 12px; color: steelblue;" href="url">CORPORATE FLEET SERVICES</a>
-      <a style="font-size: 12px; color: steelblue;" href="url">EXTENDED WARRANTY SERVICES</a>
+      <a class="navbarmenu" href="url">TRANSMISSION SERVICE</a>
+      <a class="navbarmenu" href="url">AUTO CAR & REPAIR</a>
+      <a class="navbarmenu" href="url">CORPORATE FLEET SERVICES</a>
+      <a class="navbarmenu" href="url">EXTENDED WARRANTY SERVICES</a>
     </div>
   </div>
   <!-- nav bar menu end-->
 </nav>
 
 <!-- image  -->
-<div class="text-center" style="position: relative; color: white;">
-  <img src="assets/images/header-image.png" class="img-fluid" style="width: 100%" alt="image">
-  <div style="position: absolute; top: 45%; left: 0; width: 100%;">
+<div class="text-center" class="image">
+  <img src="assets/images/header-image.png" class="img-fluid" class="picture" alt="image">
+  <div class="imagemaintext">
     <h1>SCHEDULE YOUR NEXT APPOINTMENT</h1>
   </div>
 
-  <div style="position: absolute; bottom: 20%; left: 0; width: 100%;">
+  <div class="imagescrolltext">
     <h6>Scrool down for details <br> &#709; </h6>
   </div>
 </div>
@@ -66,7 +67,7 @@
 
   <div fxLayout="row" fxLayoutGap="20px">
     <!-- DATE & TIME -->
-    <div> DATE & TIME
+    <div style="border-right: 1px solid"> DATE & TIME
       <div fxLayout="row" fxLayoutGap="25px">
         <div class="input-group-prepend">
           <input type="text" class="form-control" style="border: 1px solid darkblue" placeholder="SELECT A DATE"
