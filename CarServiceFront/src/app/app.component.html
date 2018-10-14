@@ -69,11 +69,13 @@
     <div> DATE & TIME
       <div fxLayout="row" fxLayoutGap="25px">
         <div class="input-group-prepend">
-          <input type="text" class="form-control" style="border: 1px solid darkblue" placeholder="SELECT A DATE" aria-describedby="inputGroup-sizing-default">
+          <input type="text" class="form-control" style="border: 1px solid darkblue" placeholder="SELECT A DATE"
+            aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group-prepend">
-          <input type="text" class="form-control" style="border: 1px solid darkblue" placeholder="SELECT A TIME" aria-describedby="inputGroup-sizing-default">
+          <input type="text" class="form-control" style="border: 1px solid darkblue" placeholder="SELECT A TIME"
+            aria-describedby="inputGroup-sizing-default">
         </div>
       </div>
 
@@ -81,12 +83,13 @@
 
       <div fxLayout="row" fxLayoutGap="25px">
         <div class="input-group-prepend">
-          <input type="text" class="form-control" style="border: 1px solid darkblue" placeholder="SELECT A DATE" aria-label="SELECT A DATE"
-            aria-describedby="inputGroup-sizing-default">
+          <input type="text" class="form-control" style="border: 1px solid darkblue" placeholder="SELECT A DATE"
+            aria-label="SELECT A DATE" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group-prepend">
-          <input type="text" class="form-control" style="border: 1px solid darkblue" placeholder="SELECT A TIME" aria-describedby="inputGroup-sizing-default">
+          <input type="text" class="form-control" style="border: 1px solid darkblue" placeholder="SELECT A TIME"
+            aria-describedby="inputGroup-sizing-default">
         </div>
       </div>
 
@@ -98,36 +101,40 @@
 
     <div>t</div>
 
-    <div fxLayout="row">
+    <div fxLayout="row" fxLayoutGap="20px">
       <!-- YOUR VEHICLE -->
       <div> YOUR VEHICLE
         <div fxLayout="row" fxLayoutGap="25px">
           <div class="input-group-prepend">
-            <input type="text" class="form-control" style="border: 1px solid darkblue" placeholder="SELECT A DATE" aria-describedby="inputGroup-sizing-default">
+            <input type="text" class="form-control" style="border: 1px solid darkblue" placeholder="YEAR OF CAR"
+              aria-describedby="inputGroup-sizing-default">
           </div>
 
           <div class="input-group-prepend">
-            <input type="text" class="form-control" style="border: 1px solid darkblue" placeholder="SELECT A TIME" aria-describedby="inputGroup-sizing-default">
+            <select class="custom-select" required style="border: 1px solid darkblue">
+              <option value="">SELECT YOUR CAR</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <div class="invalid-feedback">Example invalid custom select feedback</div>
           </div>
         </div>
 
         <br>
 
-        <div fxLayout="row" fxLayoutGap="25px" >
-          <div class="input-group-prepend">
-            <input type="text" class="form-control" style="border: 1px solid darkblue" placeholder="SELECT A DATE" aria-label="SELECT A DATE"
-              aria-describedby="inputGroup-sizing-default">
-          </div>
-
+        <div class="input-group-prepend">
+          <input type="text" class="form-control" style="border: 1px solid darkblue" placeholder="WRITE YOUR MESSAGE"
+            aria-describedby="inputGroup-sizing-default">
         </div>
-      </div>
-      <!-- YOUR VEHICLE end-->
 
+
+      </div>
     </div>
+    <!-- YOUR VEHICLE end-->
 
 
   </div>
-
 </div>
 
 <!-- form end -->
