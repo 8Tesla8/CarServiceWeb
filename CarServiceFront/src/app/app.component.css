@@ -75,6 +75,9 @@
     border: 1px solid darkblue
 }
 
+.horline{
+    border-left: 1px solid grey;
+}
 
 /* form end */
 
