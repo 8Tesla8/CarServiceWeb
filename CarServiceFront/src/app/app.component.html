@@ -54,7 +54,7 @@
   </div>
 
   <div class="image-scroll-text">
-    <h6>Scrool down for details <br> &#709; </h6>
+    <h6>Scroll down for details <br> &#709; </h6>
   </div>
 </div>
 <!-- image end  -->
@@ -143,23 +143,23 @@
       </div>
 
       <div fxLayout="row" fxLayoutGap="212px">
-          <div fxLayout="column" class="margin-bottom">
-            <div class="silver-text">SAT</div>
-            <div class="grey-text">CLOSE</div>
-          </div>
-  
-          <div class="form-check form-control-sm">
-            <input type="checkbox" class="form-check-input">
-            <label class="form-check-label grey">OTHER</label>
-          </div>
+        <div fxLayout="column" class="margin-bottom">
+          <div class="silver-text">SAT</div>
+          <div class="grey-text">CLOSE</div>
         </div>
+
+        <div class="form-check form-control-sm">
+          <input type="checkbox" class="form-check-input">
+          <label class="form-check-label grey">Other</label>
+        </div>
+      </div>
     </div>
     <!-- DATE & TIME left part end -->
 
     <div class="hor-line">&nbsp;</div>
 
     <div fxLayout="row" fxLayoutGap="20px">
-      <!-- YOUR VEHICLE -->
+      <!-- YOUR VEHICLE right part -->
       <div> YOUR VEHICLE
         <div fxLayout="row" fxLayoutGap="25px">
           <div class="input-group-prepend">
@@ -167,7 +167,7 @@
           </div>
 
           <div class="input-group-prepend">
-            <select class="custom-select input-border" required>
+            <select class="form-control custom-select input-border popup-size" required>
               <option value="">SELECT YOUR CAR</option>
               <option value="1">One</option>
               <option value="2">Two</option>
@@ -183,10 +183,47 @@
           <input type="text" class="form-control input-border" placeholder="WRITE YOUR MESSAGE">
         </div>
 
+        <br>
+
+        <div> PERSONAL DETAILS </div>
+
+        <div fxLayout="row" fxLayoutGap="25px">
+          <div class="input-group-prepend">
+            <input type="text" class="form-control input-border" placeholder="FIRST NAME">
+          </div>
+
+          <div class="input-group-prepend">
+            <input type="text" class="form-control input-border" placeholder="SECOND NAME">
+          </div>
+        </div>
+
+        <br>
+
+        <div fxLayout="row" fxLayoutGap="25px">
+          <div class="input-group-prepend">
+            <input type="text" class="form-control input-border" placeholder="EMAIL">
+          </div>
+
+          <div class="input-group-prepend">
+            <input type="text" class="form-control input-border" placeholder="PHONE NUMBER">
+          </div>
+        </div>
+
+        <br>
+
+        <div fxLayout="row" fxLayoutGap="330px">
+            <button fxLayoutAlign="start none" type="button" class="btn clear-button input-border"> 
+              <div class="blue-text">CLEAR</div> 
+            </button>
+
+            <button fxLayoutAlign="end none" type="button" class="btn send-button nput-border">
+             <div class="white-text">SEND</div>  
+            </button>
+        </div>
 
       </div>
     </div>
-    <!-- YOUR VEHICLE end-->
+    <!-- YOUR VEHICLE right part end-->
 
 
   </div>

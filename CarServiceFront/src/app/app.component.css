@@ -90,5 +90,20 @@
     margin-bottom: 10px;
 }
 
+.popup-size{
+    width: 220px;
+}
+
+.white-text{
+    color: white;
+}
+
+.clear-button{
+    background-color: white;
+}
+
+.send-button{
+    background-color: darkblue;
+}
 /* form end */
 
