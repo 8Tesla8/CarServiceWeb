@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -16,5 +16,36 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
+</ul> -->
 
+<nav class="navbar  navbar-light bg-light sticky-top">
+  <!-- left part -->
+  <div class="container">
+      <a fxLayoutAlign="start start" class="navbar-brand" href="#">
+          <img src="assets/images/logo.png" alt="Logo" style="width:70px;">
+        </a>
+  </div>
+  <!-- end left part -->
+
+
+  <!-- right part -->
+  <div fxLayout="row" >
+
+    <div fxLayout="column" fxLayoutAlign="end end">
+      <!-- first row  -->
+      <div fxLayout="row">
+        <a href="url">SCHEDULE AN APPOINTMENT</a>
+        <a href="url">LOCATE A SERVICE CENTER</a>
+      </div>
+      <!-- end first row  -->
+
+      <!-- second row -->
+      <p>(801) 783.32.80</p>
+      <!-- end second row  -->
+
+    </div>
+    <!--end right part -->
+
+  </div>
+
+</nav>
