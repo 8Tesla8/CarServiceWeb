@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TransferService } from '../service/transfer.service';
 import { UserDTO } from '../dto/userDTO';
+import { AppointmentDTO } from '../dto/appointmentDTO';
 
 @Component({
     selector: 'app-appointment',
@@ -12,10 +13,13 @@ export class AppointmentComponent {
 
     constructor(private transferService: TransferService) { }
 
-    submit(user: UserDTO) {
-        this.transferService.postData(user)
+    submitAppointment() {
+        const d = new AppointmentDTO();
+
+        this.transferService.postAppointment(d)
             .subscribe(
-                (data: UserDTO) => { this.receivedUser = data; this.done = true; },
+                (data: any) => {
+                },
                 error => console.log(error)
             );
     }
