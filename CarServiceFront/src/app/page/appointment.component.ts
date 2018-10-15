@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TransferService } from '../service/transfer.service';
 import { UserDTO } from '../dto/userDTO';
 import { AppointmentDTO } from '../dto/appointmentDTO';
+import { CarDTO } from '../dto/carDTO';
 
 @Component({
     selector: 'app-appointment',
@@ -26,6 +27,12 @@ export class AppointmentComponent {
         d.User = new UserDTO();
         d.User.Email = 'gg.@mail';
         d.User.FirstName = 'name222';
+
+        d.Car = new CarDTO();
+        d.Car.CarModel = 'Hunday22';
+        d.Car.Year = 2010;
+
+        d.ServiceType = 'Other';
         // this.transferService.get().subscribe(
         //     (data: any) => {
         //         debugger;
