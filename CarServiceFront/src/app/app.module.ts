@@ -9,6 +9,7 @@ import { FooterComponent } from './share/footer.component';
 import { HeaderComponent } from './share/header.component';
 import { AppointmentComponent } from './page/appointment.component';
 import { AppointmentDTO } from './dto/appointmentDTO';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AppointmentDTO } from './dto/appointmentDTO';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FlexLayoutModule,
     RouterModule.forRoot([
       { path: 'appointment', component: AppModule },
