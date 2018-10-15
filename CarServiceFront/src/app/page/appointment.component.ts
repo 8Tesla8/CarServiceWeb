@@ -11,7 +11,10 @@ import { AppointmentDTO } from '../dto/appointmentDTO';
 
 export class AppointmentComponent {
 
-    constructor(private transferService: TransferService) { }
+    // private transferService: TransferService;
+
+    constructor(private transferService: TransferService) {
+    }
 
     submitAppointment() {
         const d = new AppointmentDTO();
