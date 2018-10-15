@@ -8,6 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './share/footer.component';
 import { HeaderComponent } from './share/header.component';
 import { AppointmentComponent } from './page/appointment.component';
+import { AppointmentDTO } from './dto/appointmentDTO';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,9 @@ import { AppointmentComponent } from './page/appointment.component';
     FooterComponent,
     HeaderComponent,
     AppointmentComponent,
+
+    AppointmentDTO,
+
   ],
   imports: [
     BrowserModule,
