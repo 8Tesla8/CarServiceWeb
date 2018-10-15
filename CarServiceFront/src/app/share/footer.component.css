@@ -1,3 +1,22 @@
 .footer{
     background-color: darkblue;
 }
+
+.space{
+    margin: 20px;
+}
+
+.bottom-line{
+    border-top: 1px solid grey;
+}
+
+.white-text{
+    color:  white;
+}
+.small-text{
+    font-size: 11px; 
+}
+
+.logo{
+    margin-top: -80%;
+}
