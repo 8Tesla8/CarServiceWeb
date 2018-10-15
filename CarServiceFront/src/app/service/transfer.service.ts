@@ -20,4 +20,8 @@ export class TransferService {
     postAppointment(appointment: AppointmentDTO) {
         return this.http.post(this.server + 'apointment', appointment);
     }
+
+    get() {
+        return this.http.get(this.server + 'values');
+    }
 }

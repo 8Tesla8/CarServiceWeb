@@ -19,11 +19,18 @@ export class AppointmentComponent {
     submitAppointment() {
         const d = new AppointmentDTO();
 
-        this.transferService.postAppointment(d)
-            .subscribe(
-                (data: any) => {
-                },
-                error => console.log(error)
-            );
+        this.transferService.get().subscribe(
+            (data: any) => {
+                console.log('good');
+            },
+            error => console.log(error)
+        );
+
+        // this.transferService.postAppointment(d)
+        //     .subscribe(
+        //         (data: any) => {
+        //         },
+        //         error => console.log(error)
+        //     );
     }
 }
