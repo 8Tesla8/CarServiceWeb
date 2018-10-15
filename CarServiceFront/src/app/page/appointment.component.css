@@ -1,0 +1,93 @@
+.silver-text{
+    font-size: 9px;
+    color: silver;
+}
+.grey-text{
+    font-size: 11px; 
+    color: grey;
+}
+
+/* image */
+.picture-size{
+    width: 100%
+}
+
+.image-main-text{
+    position: absolute; 
+    top: 45%; 
+    left: 0; 
+    width: 100%;
+    color: white;
+}
+
+.image-scroll-text{
+    color: white;
+    position: absolute; 
+    bottom: 20%; 
+    left: 0; 
+    width: 100%;
+}
+
+/* image end */
+
+/* form */
+.message-box{
+    width: 467px;
+}
+
+.blue-text{
+    color: darkblue;
+}
+
+.input-border{
+    border: 1px solid darkblue
+}
+
+.hor-line{
+    border-left: 1px solid grey;
+}
+
+.grey{
+    color: grey;
+}
+
+.margin-bottom{
+    margin-bottom: 10px;
+}
+
+.popup-size{
+    width: 220px;
+}
+
+.white-text{
+    color: white;
+}
+
+.clear-button{
+    background-color: white;
+}
+
+.send-button{
+    background-color: darkblue;
+}
+/* form end */
+
+
+/* sign up */
+.space{
+    margin: 20px;
+}
+
+.bottom-line{
+    border-top: 1px solid grey;
+}
+
+.social-buttons{
+    width: 287px;
+}
+
+.first-line{
+    width: 250px;
+}
+
+/* sign up end */
