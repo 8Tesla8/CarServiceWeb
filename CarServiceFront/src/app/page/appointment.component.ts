@@ -11,14 +11,21 @@ import { AppointmentDTO } from '../dto/appointmentDTO';
 
 export class AppointmentComponent {
 
-    // private transferService: TransferService;
-
     constructor(private transferService: TransferService) {
     }
 
     submitAppointment() {
         const d = new AppointmentDTO();
 
+        d.Message = 'ggg';
+
+        const d3 = new Date();
+
+        d.StartTime = new Date().toLocaleString();
+
+        d.User = new UserDTO();
+        d.User.Email = 'gg.@mail';
+        d.User.FirstName = 'name222';
         // this.transferService.get().subscribe(
         //     (data: any) => {
         //         debugger;
