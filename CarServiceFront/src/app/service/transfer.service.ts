@@ -20,6 +20,10 @@ export class TransferService {
         return this.http.get(this.server + 'servicetype');
     }
 
+    putUser(user: UserDTO) {
+        return this.http.put(this.server + 'user', user);
+    }
+
     get() {
         return this.http.get(this.server + 'values');
     }

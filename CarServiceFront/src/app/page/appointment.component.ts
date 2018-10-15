@@ -56,5 +56,18 @@ export class AppointmentComponent {
                 },
                 error => console.log(error)
             );
+
+        //
+        const u = new UserDTO();
+        u.Email = 'my@vail.com';
+        u.Notify = true;
+
+        this.transferService.putUser(u)
+        .subscribe(
+            (data: any) => {
+                console.log('good');
+            },
+            error => console.log(error)
+        );
     }
 }
