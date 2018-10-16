@@ -171,7 +171,7 @@
                         <div class="blue-text">CLEAR</div>
                     </button>
 
-                    <button fxLayoutAlign="end none" type="button" class="btn send-button nput-border">
+                    <button fxLayoutAlign="end none" type="button" class="btn send-button nput-border" (click)="submitAppointment()">
                         <div class="white-text">SEND</div>
                     </button>
                 </div>
@@ -236,7 +236,7 @@
         <div class="input-group mb-3 input-email-size sign-column-size">
             <input type="text" class="form-control input-border" placeholder="ENTER HERE YOUR EMAIL">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary send-button" type="button" (click)="submitAppointment()">
+                <button class="btn btn-outline-secondary send-button" type="button" (click)="notifyUser()">
                     <div class="white-text">
                         SEND
                     </div>

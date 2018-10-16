@@ -56,7 +56,9 @@ export class AppointmentComponent {
                 },
                 error => console.log(error)
             );
+    }
 
+    notifyUser(){
         //
         const u = new UserDTO();
         u.Email = 'my@vail.com';
