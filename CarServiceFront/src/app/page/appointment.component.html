@@ -238,9 +238,10 @@
 <div fxLayoutAlign="center center" fxLayout="row" fxLayoutGap="120px">
     <div>
         <div class="input-group mb-3 input-email-size sign-column-size">
-            <input type="text" [formControl]="emailNotifyControl" class="form-control input-border" placeholder="ENTER HERE YOUR EMAIL">
+            <input type="text" required [formControl]="emailNotifyControl" class="form-control input-border"
+                placeholder="ENTER HERE YOUR EMAIL">
             <div class="input-group-append">
-                <button [disabled]="!emailNotifyControl.valid" class="btn btn-outline-secondary send-button" type="button"
+                <button [disabled]="emailNotifyControl.invalid" class="btn btn-outline-secondary send-button" type="button"
                     (click)="notifyUser()">
                     <div class="white-text">
                         SEND
