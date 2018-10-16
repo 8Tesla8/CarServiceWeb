@@ -88,12 +88,43 @@ export class AppointmentComponent implements OnInit {
         d.Car.Year = 2010;
 
         d.ServiceType = 'Other';
-  
-        if(this.appointmentFormGroup.invalid){
+
+        if (this.appointmentFormGroup.invalid) {
             return;
         }
 
-        const Appointment = new AppointmentDTO();
+        const appointment = new AppointmentDTO();
+        appointment.StartTime = this.dataStartControl.value + ' ' + this.timeStartControl.value;
+
+        if (this.dataEndControl.valid && this.timeEndControl.valid) {
+            appointment.EndTime = this.dataEndControl.valid + ' ' + this.timeEndControl.valid;
+        }
+
+        if (this.carYearControl.valid || this.carModelControl.valid) {
+            appointment.Car = new CarDTO();
+
+            if (this.carYearControl.valid) {
+                appointment.Car.Year = this.carYearControl.value;
+            }
+            if (this.carModelControl.valid) {
+                appointment.Car.CarModel = this.carModelControl.value;
+            }
+        }
+
+        if (this.messageControl.valid) {
+            appointment.Message = this.messageControl.value;
+        }
+
+        if (this.firstNameControl.valid ||
+            this.secondNameControl.valid ||
+            this.phoneNumberControl) {
+            appointment.User = new UserDTO();
+            
+            appointment.User.Email = this.emailControl.value;
+            appointment.User.FirstName = this.firstNameControl.value;
+            appointment.User.SecondName = this.secondNameControl.value;
+            appointment.User.PhoneNumber = this.phoneNumberControl.value;
+        }
 
         this.transferService.postAppointment(d)
             .subscribe(
@@ -105,7 +136,7 @@ export class AppointmentComponent implements OnInit {
     }
 
     notifyUser() {
-        if(this.emailNotifyControl.invalid){
+        if (this.emailNotifyControl.invalid) {
             return;
         }
 
@@ -116,9 +147,14 @@ export class AppointmentComponent implements OnInit {
         this.transferService.putUser(user)
             .subscribe(
                 (data: any) => {
+                    //check value
+                    alert('good');
                     console.log('good');
                 },
-                error => console.log(error)
+                error => {
+                    alert('bad');
+                    console.log(error)
+                }
             );
     }
 
