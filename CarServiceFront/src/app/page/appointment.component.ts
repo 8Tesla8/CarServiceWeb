@@ -88,21 +88,12 @@ export class AppointmentComponent implements OnInit {
         d.Car.Year = 2010;
 
         d.ServiceType = 'Other';
-        // this.transferService.get().subscribe(
-        //     (data: any) => {
-        //         debugger;
-        //         console.log('good');
-        //     },
-        //     error => console.log(error)
-        // );
+  
+        if(this.appointmentFormGroup.invalid){
+            return;
+        }
 
-        // this.transferService.getServiceType().subscribe(
-        //     (data: any) => {
-        //         debugger;
-        //         console.log('good');
-        //     },
-        //     error => console.log(error)
-        // );
+        const Appointment = new AppointmentDTO();
 
         this.transferService.postAppointment(d)
             .subscribe(
@@ -114,12 +105,15 @@ export class AppointmentComponent implements OnInit {
     }
 
     notifyUser() {
-        //
-        const u = new UserDTO();
-        u.Email = 'my@vail.com';
-        u.Notify = true;
+        if(this.emailNotifyControl.invalid){
+            return;
+        }
 
-        this.transferService.putUser(u)
+        const user = new UserDTO();
+        user.Email = this.emailNotifyControl.value;
+        user.Notify = true;
+
+        this.transferService.putUser(user)
             .subscribe(
                 (data: any) => {
                     console.log('good');
