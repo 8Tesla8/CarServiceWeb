@@ -71,6 +71,10 @@
     width: 200px;
 }
 
+.sign-column-size{
+    width: 285px;
+}
+
 .input-big-size{
     width: 425px;
 }
@@ -91,7 +95,7 @@
 }
 
 .social-buttons{
-    width: 287px;
+    width: 200px;
 }
 
 .first-line{
