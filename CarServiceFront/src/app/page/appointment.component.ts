@@ -15,12 +15,42 @@ export class AppointmentComponent implements OnInit {
 
     emailNotifyControl = new FormControl('', [Validators.required, Validators.email]);
 
+    appointmentFormGroup = new FormGroup({});
+
+    dataStartControl = new FormControl('', [Validators.required]);
+    timeStartControl = new FormControl('', [Validators.required]);
+
+    dataEndControl = new FormControl('');
+    timeEndControl = new FormControl('');
+
+    carYearControl = new FormControl('');
+    carModelControl = new FormControl('');
+    messageControl = new FormControl('');
+
+    firstNameControl = new FormControl('', [Validators.required]);
+    secondNameControl = new FormControl('');
+    emailControl = new FormControl('', [Validators.required, Validators.email]);
+    phoneNumberControl = new FormControl('');
+
     constructor(private transferService: TransferService) {
     }
 
     ngOnInit(): void {
         console.log("init");
-        // this.notifyFormGroup.addControl('emailNotifyControl', this.emailNotifyControl);
+        this.appointmentFormGroup.addControl('dataStartControl', this.dataStartControl);
+        this.appointmentFormGroup.addControl('timeStartControl', this.timeStartControl);
+
+        this.appointmentFormGroup.addControl('dataEndControl', this.dataEndControl);
+        this.appointmentFormGroup.addControl('timeEndControl', this.timeEndControl);
+
+        this.appointmentFormGroup.addControl('carYearControl', this.carYearControl);
+        this.appointmentFormGroup.addControl('carModelControl', this.carModelControl);
+        this.appointmentFormGroup.addControl('messageControl', this.messageControl);
+
+        this.appointmentFormGroup.addControl('firstNameControl', this.firstNameControl);
+        this.appointmentFormGroup.addControl('secondNameControl', this.secondNameControl);
+        this.appointmentFormGroup.addControl('emailControl', this.emailControl);
+        this.appointmentFormGroup.addControl('phoneNumberControl', this.phoneNumberControl);
     }
 
     submitAppointment() {
