@@ -25,11 +25,11 @@
         <div> DATE & TIME
             <div fxLayout="row" fxLayoutGap="25px">
                 <div class="input-group-prepend column-size">
-                    <input type="data" class="form-control input-border" placeholder="SELECT A DATE">
+                    <input type="data" [formControl]="dataStartControl" class="form-control input-border" placeholder="SELECT A DATE">
                 </div>
 
                 <div class="input-group-prepend column-size">
-                    <input type="time" class="form-control input-border" placeholder="SELECT A TIME">
+                    <input type="time" [formControl]="timeStartControl" class="form-control input-border" placeholder="SELECT A TIME">
                 </div>
             </div>
 
@@ -37,11 +37,11 @@
 
             <div fxLayout="row" fxLayoutGap="25px">
                 <div class="input-group-prepend column-size">
-                    <input type="data" class="form-control input-border" placeholder="SELECT A DATE">
+                    <input type="data" [formControl]="dataEndControl" class="form-control input-border" placeholder="SELECT A DATE">
                 </div>
 
                 <div class="input-group-prepend column-size">
-                    <input type="time" class="form-control input-border" placeholder="SELECT A TIME">
+                    <input type="time" [formControl]="timeEndControl" class="form-control input-border" placeholder="SELECT A TIME">
                 </div>
             </div>
 
@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="form-check form-control-sm column-size">
-                    <input type="checkbox" class="form-check-input">
+                    <input type="checkbox" [formControl]="transmissionCheckboxControl" class="form-check-input">
                     <label class="form-check-label grey">Transmission</label>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="form-check form-control-sm column-size">
-                    <input type="checkbox" class="form-check-input">
+                    <input type="checkbox" [formControl]="vehicleMaintanceCheckboxControl" class="form-check-input">
                     <label class="form-check-label grey">Vehicle Maintenance</label>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                 </div>
 
                 <div class="form-check form-control-sm column-size">
-                    <input type="checkbox" class="form-check-input">
+                    <input type="checkbox" [formControl]="vehicleRepairCheckboxControl" class="form-check-input">
                     <label class="form-check-label grey">Vehicle Rapair</label>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                 </div>
 
                 <div class="form-check form-control-sm column-size">
-                    <input type="checkbox" class="form-check-input">
+                    <input type="checkbox" [formControl]="otherCheckboxControl" class="form-check-input">
                     <label class="form-check-label grey">Other</label>
                 </div>
             </div>
@@ -118,11 +118,12 @@
             <div> YOUR VEHICLE
                 <div fxLayout="row" fxLayoutGap="25px">
                     <div class="input-group-prepend column-size">
-                        <input type="text" class="form-control input-border" placeholder="YEAR OF CAR">
+                        <input type="text" [formControl]="carYearControl" class="form-control input-border" placeholder="YEAR OF CAR">
                     </div>
 
                     <div class="input-group-prepend column-size">
-                        <select class="form-control custom-select input-border" required>
+                        <select [formControl]="carModelControl" class="form-control custom-select input-border"
+                            required>
                             <option value="">SELECT YOUR CAR</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -135,7 +136,8 @@
                 <br>
 
                 <div class="input-group-prepend input-big-size">
-                    <input type="text" class="form-control input-border message-box" placeholder="WRITE YOUR MESSAGE">
+                    <input type="text" [formControl]="messageControl" class="form-control input-border message-box"
+                        placeholder="WRITE YOUR MESSAGE">
                 </div>
 
                 <br>
@@ -144,11 +146,13 @@
 
                 <div fxLayout="row" fxLayoutGap="25px">
                     <div class="input-group-prepend column-size">
-                        <input type="text" class="form-control input-border" placeholder="FIRST NAME">
+                        <input type="text" [formControl]="firstNameControl" class="form-control input-border"
+                            placeholder="FIRST NAME">
                     </div>
 
                     <div class="input-group-prepend column-size">
-                        <input type="text" class="form-control input-border" placeholder="SECOND NAME">
+                        <input type="text" [formControl]="secondNameControl" class="form-control input-border"
+                            placeholder="SECOND NAME">
                     </div>
                 </div>
 
@@ -156,11 +160,12 @@
 
                 <div fxLayout="row" fxLayoutGap="25px">
                     <div class="input-group-prepend column-size">
-                        <input type="text" class="form-control input-border" placeholder="EMAIL">
+                        <input type="text" [formControl]="emailControl" class="form-control input-border" placeholder="EMAIL">
                     </div>
 
                     <div class="input-group-prepend column-size">
-                        <input type="text" class="form-control input-border" placeholder="PHONE NUMBER">
+                        <input type="text" [formControl]="phoneNumberControl" class="form-control input-border"
+                            placeholder="PHONE NUMBER">
                     </div>
                 </div>
 

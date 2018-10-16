@@ -15,6 +15,7 @@ export class AppointmentComponent implements OnInit {
 
     emailNotifyControl = new FormControl('', [Validators.required, Validators.email]);
 
+
     appointmentFormGroup = new FormGroup({});
 
     dataStartControl = new FormControl('', [Validators.required]);
@@ -23,14 +24,23 @@ export class AppointmentComponent implements OnInit {
     dataEndControl = new FormControl('');
     timeEndControl = new FormControl('');
 
+    //car info
     carYearControl = new FormControl('');
     carModelControl = new FormControl('');
     messageControl = new FormControl('');
 
+    //personal info
     firstNameControl = new FormControl('', [Validators.required]);
     secondNameControl = new FormControl('');
     emailControl = new FormControl('', [Validators.required, Validators.email]);
     phoneNumberControl = new FormControl('');
+
+    //service type
+    transmissionCheckboxControl = new FormControl('');
+    vehicleMaintanceCheckboxControl = new FormControl('');
+    vehicleRepairCheckboxControl = new FormControl('');
+    otherCheckboxControl = new FormControl('');
+
 
     constructor(private transferService: TransferService) {
     }
@@ -51,9 +61,16 @@ export class AppointmentComponent implements OnInit {
         this.appointmentFormGroup.addControl('secondNameControl', this.secondNameControl);
         this.appointmentFormGroup.addControl('emailControl', this.emailControl);
         this.appointmentFormGroup.addControl('phoneNumberControl', this.phoneNumberControl);
+
+        this.appointmentFormGroup.addControl('transmissionCheckboxControl', this.transmissionCheckboxControl);
+        this.appointmentFormGroup.addControl('vehicleMaintanceCheckboxControl', this.vehicleMaintanceCheckboxControl);
+        this.appointmentFormGroup.addControl('vehicleRepairCheckboxControl', this.vehicleRepairCheckboxControl);
+        this.appointmentFormGroup.addControl('otherCheckboxControl', this.otherCheckboxControl);
     }
 
+
     submitAppointment() {
+        debugger;
         const d = new AppointmentDTO();
 
         d.Message = 'ggg';
