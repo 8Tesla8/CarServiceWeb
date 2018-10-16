@@ -70,68 +70,48 @@ export class AppointmentComponent implements OnInit {
 
 
     submitAppointment() {
-        debugger;
-        const d = new AppointmentDTO();
-
-        d.Message = 'ggg';
-
-        const d3 = new Date();
-
-        d.StartTime = new Date().toLocaleString();
-
-        d.User = new UserDTO();
-        d.User.Email = 'gg.@mail';
-        d.User.FirstName = 'name222';
-
-        d.Car = new CarDTO();
-        d.Car.CarModel = 'Hunday22';
-        d.Car.Year = 2010;
-
-        d.ServiceType = 'Other';
-
         if (this.appointmentFormGroup.invalid) {
             return;
         }
 
         const appointment = new AppointmentDTO();
         appointment.StartTime = this.dataStartControl.value + ' ' + this.timeStartControl.value;
+        appointment.EndTime = this.dataEndControl.value + ' ' + this.timeEndControl.value;
 
-        if (this.dataEndControl.valid && this.timeEndControl.valid) {
-            appointment.EndTime = this.dataEndControl.valid + ' ' + this.timeEndControl.valid;
-        }
-
-        if (this.carYearControl.valid || this.carModelControl.valid) {
+        if (this.carYearControl.value !== "" || this.carModelControl.value !== "") {
             appointment.Car = new CarDTO();
 
-            if (this.carYearControl.valid) {
-                appointment.Car.Year = this.carYearControl.value;
+            if (this.carYearControl.value !== "") {
+                appointment.Car.Year = parseInt(this.carYearControl.value);
             }
-            if (this.carModelControl.valid) {
+            if (this.carModelControl.value !== "") {
                 appointment.Car.CarModel = this.carModelControl.value;
             }
         }
 
-        if (this.messageControl.valid) {
-            appointment.Message = this.messageControl.value;
-        }
+        appointment.Message = this.messageControl.value;
 
-        if (this.firstNameControl.valid ||
-            this.secondNameControl.valid ||
-            this.phoneNumberControl) {
-            appointment.User = new UserDTO();
-            
-            appointment.User.Email = this.emailControl.value;
-            appointment.User.FirstName = this.firstNameControl.value;
-            appointment.User.SecondName = this.secondNameControl.value;
-            appointment.User.PhoneNumber = this.phoneNumberControl.value;
-        }
+        appointment.User = new UserDTO();
+        
+        appointment.User.Email = this.emailControl.value;
+        appointment.User.FirstName = this.firstNameControl.value;
+        appointment.User.SecondName = this.secondNameControl.value;
+        appointment.User.PhoneNumber = this.phoneNumberControl.value;
 
-        this.transferService.postAppointment(d)
+        //checkboxes values
+        debugger;
+
+        this.transferService.postAppointment(appointment)
             .subscribe(
                 (data: any) => {
+                    //check value
+                    alert('good');
                     console.log('good');
                 },
-                error => console.log(error)
+                error => {
+                    alert('bad');
+                    console.log(error)
+                }
             );
     }
 
