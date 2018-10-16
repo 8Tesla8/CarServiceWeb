@@ -110,7 +110,15 @@ export class AppointmentComponent implements OnInit {
         appointment.User.PhoneNumber = this.phoneNumberControl.value;
 
         // checkboxes values
-
+        if (this.transmissionCheckboxControl.value !== '') {
+            appointment.ServiceType = 'Transmission';
+        } else if (this.vehicleMaintanceCheckboxControl.value !== '') {
+            appointment.ServiceType = 'Vehicle Maintance';
+        } else if (this.vehicleRepairCheckboxControl.value !== '') {
+            appointment.ServiceType = 'Vehicle Repair';
+        } else if (this.otherCheckboxControl.value !== '') {
+            appointment.ServiceType = 'Other';
+        }
 
         this.transferService.postAppointment(appointment)
             .subscribe(
