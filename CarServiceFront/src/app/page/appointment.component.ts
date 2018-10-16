@@ -139,6 +139,27 @@ export class AppointmentComponent implements OnInit {
     }
 
     clearInputs() {
-
+        this.dataStartControl.setValue(""); 
+        this.timeStartControl.setValue("");
+    
+        this.dataEndControl.setValue("");
+        this.timeEndControl.setValue("");
+    
+        //car info
+        this.carYearControl.setValue("");
+        this.carModelControl.setValue("");
+        this.messageControl.setValue("");
+    
+        //personal info
+        this.firstNameControl.setValue(""); 
+        this.secondNameControl.setValue("");
+        this.emailControl.setValue(""); 
+        this.phoneNumberControl.setValue("");
+    
+        //service type
+        this.transmissionCheckboxControl.setValue("");
+        this.vehicleMaintanceCheckboxControl.setValue("");
+        this.vehicleRepairCheckboxControl.setValue("");
+        this.otherCheckboxControl.setValue("");
     }
 }
