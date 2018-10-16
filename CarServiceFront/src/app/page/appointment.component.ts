@@ -72,4 +72,8 @@ export class AppointmentComponent {
             error => console.log(error)
         );
     }
+
+    clearInputs(){
+        
+    }
 }
