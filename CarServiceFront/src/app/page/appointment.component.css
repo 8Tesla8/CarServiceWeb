@@ -55,10 +55,6 @@
     margin-bottom: 10px;
 }
 
-.popup-size{
-    width: 220px;
-}
-
 .white-text{
     color: white;
 }
@@ -69,6 +65,18 @@
 
 .send-button{
     background-color: darkblue;
+}
+
+.input-size{
+    width: 200px;
+}
+
+.input-big-size{
+    width: 425px;
+}
+
+.input-email-size{
+    width: 285px;
 }
 /* form end */
 

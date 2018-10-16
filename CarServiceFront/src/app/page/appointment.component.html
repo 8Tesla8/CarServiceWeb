@@ -24,23 +24,23 @@
         <!-- DATE & TIME left part -->
         <div> DATE & TIME
             <div fxLayout="row" fxLayoutGap="25px">
-                <div class="input-group-prepend">
-                    <input type="text" class="form-control input-border" placeholder="SELECT A DATE">
+                <div class="input-group-prepend input-size">
+                    <input type="data" class="form-control input-border" placeholder="SELECT A DATE">
                 </div>
 
-                <div class="input-group-prepend">
-                    <input type="text" class="form-control input-border" placeholder="SELECT A TIME">
+                <div class="input-group-prepend input-size">
+                    <input type="time" class="form-control input-border" placeholder="SELECT A TIME">
                 </div>
             </div>
 
             <br>
 
             <div fxLayout="row" fxLayoutGap="25px">
-                <div class="input-group-prepend">
+                <div class="input-group-prepend input-size">
                     <input type="text" class="form-control input-border" placeholder="SELECT A DATE">
                 </div>
 
-                <div class="input-group-prepend">
+                <div class="input-group-prepend input-size">
                     <input type="text" class="form-control input-border" placeholder="SELECT A TIME">
                 </div>
             </div>
@@ -117,12 +117,12 @@
             <!-- YOUR VEHICLE right part -->
             <div> YOUR VEHICLE
                 <div fxLayout="row" fxLayoutGap="25px">
-                    <div class="input-group-prepend">
+                    <div class="input-group-prepend input-size">
                         <input type="text" class="form-control input-border" placeholder="YEAR OF CAR">
                     </div>
 
-                    <div class="input-group-prepend">
-                        <select class="form-control custom-select input-border popup-size" required>
+                    <div class="input-group-prepend input-size">
+                        <select class="form-control custom-select input-border" required>
                             <option value="">SELECT YOUR CAR</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -134,7 +134,7 @@
 
                 <br>
 
-                <div class="input-group-prepend">
+                <div class="input-group-prepend input-big-size">
                     <input type="text" class="form-control input-border message-box" placeholder="WRITE YOUR MESSAGE">
                 </div>
 
@@ -143,11 +143,11 @@
                 <div> PERSONAL DETAILS </div>
 
                 <div fxLayout="row" fxLayoutGap="25px">
-                    <div class="input-group-prepend">
+                    <div class="input-group-prepend input-size">
                         <input type="text" class="form-control input-border" placeholder="FIRST NAME">
                     </div>
 
-                    <div class="input-group-prepend">
+                    <div class="input-group-prepend input-size">
                         <input type="text" class="form-control input-border" placeholder="SECOND NAME">
                     </div>
                 </div>
@@ -155,18 +155,18 @@
                 <br>
 
                 <div fxLayout="row" fxLayoutGap="25px">
-                    <div class="input-group-prepend">
+                    <div class="input-group-prepend input-size">
                         <input type="text" class="form-control input-border" placeholder="EMAIL">
                     </div>
 
-                    <div class="input-group-prepend">
+                    <div class="input-group-prepend input-size">
                         <input type="text" class="form-control input-border" placeholder="PHONE NUMBER">
                     </div>
                 </div>
 
                 <br>
 
-                <div fxLayout="row" fxLayoutGap="325px">
+                <div fxLayout="row" fxLayoutGap="290px">
                     <button fxLayoutAlign="start none" type="button" class="btn clear-button input-border">
                         <div class="blue-text">CLEAR</div>
                     </button>
@@ -233,7 +233,7 @@
 
 <div fxLayoutAlign="center center" fxLayout="row" fxLayoutGap="180px">
     <div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-3 input-email-size">
             <input type="text" class="form-control input-border" placeholder="ENTER HERE YOUR EMAIL">
             <div class="input-group-append">
                 <button class="btn btn-outline-secondary send-button" type="button" (click)="submitAppointment()">
