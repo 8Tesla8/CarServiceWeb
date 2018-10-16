@@ -24,6 +24,11 @@ export class TransferService {
         return this.http.put(this.server + 'user', user);
     }
 
+    getCarModel() {
+        return this.http.get(this.server + 'carmodel');
+    }
+
+    // test
     get() {
         return this.http.get(this.server + 'values');
     }

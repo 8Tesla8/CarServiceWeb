@@ -13,6 +13,8 @@ import { CarDTO } from '../dto/carDTO';
 
 export class AppointmentComponent implements OnInit {
 
+    public carModel: Array<string>;
+
     emailNotifyControl = new FormControl('', [Validators.required, Validators.email]);
 
 
@@ -24,18 +26,18 @@ export class AppointmentComponent implements OnInit {
     dataEndControl = new FormControl('');
     timeEndControl = new FormControl('');
 
-    //car info
+    // car info
     carYearControl = new FormControl('');
     carModelControl = new FormControl('');
     messageControl = new FormControl('');
 
-    //personal info
+    // personal info
     firstNameControl = new FormControl('', [Validators.required]);
     secondNameControl = new FormControl('');
     emailControl = new FormControl('', [Validators.required, Validators.email]);
     phoneNumberControl = new FormControl('');
 
-    //service type
+    // service type
     transmissionCheckboxControl = new FormControl('');
     vehicleMaintanceCheckboxControl = new FormControl('');
     vehicleRepairCheckboxControl = new FormControl('');
@@ -46,7 +48,16 @@ export class AppointmentComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log("init");
+        this.transferService.getCarModel().
+            subscribe(
+                (responce: Array<string>) => {
+                    this.carModel = responce;
+                },
+                error => {
+                    alert('Server error.');
+                }
+            );
+
         this.appointmentFormGroup.addControl('dataStartControl', this.dataStartControl);
         this.appointmentFormGroup.addControl('timeStartControl', this.timeStartControl);
 
@@ -78,13 +89,13 @@ export class AppointmentComponent implements OnInit {
         appointment.StartTime = this.dataStartControl.value + ' ' + this.timeStartControl.value;
         appointment.EndTime = this.dataEndControl.value + ' ' + this.timeEndControl.value;
 
-        if (this.carYearControl.value !== "" || this.carModelControl.value !== "") {
+        if (this.carYearControl.value !== '' || this.carModelControl.value !== '') {
             appointment.Car = new CarDTO();
 
-            if (this.carYearControl.value !== "") {
+            if (this.carYearControl.value !== '') {
                 appointment.Car.Year = parseInt(this.carYearControl.value);
             }
-            if (this.carModelControl.value !== "") {
+            if (this.carModelControl.value !== '') {
                 appointment.Car.CarModel = this.carModelControl.value;
             }
         }
@@ -92,25 +103,26 @@ export class AppointmentComponent implements OnInit {
         appointment.Message = this.messageControl.value;
 
         appointment.User = new UserDTO();
-        
+
         appointment.User.Email = this.emailControl.value;
         appointment.User.FirstName = this.firstNameControl.value;
         appointment.User.SecondName = this.secondNameControl.value;
         appointment.User.PhoneNumber = this.phoneNumberControl.value;
 
-        //checkboxes values
-        debugger;
+        // checkboxes values
+
 
         this.transferService.postAppointment(appointment)
             .subscribe(
-                (data: any) => {
-                    //check value
-                    alert('good');
-                    console.log('good');
+                (responce: boolean) => {
+                    if (responce) {
+                        alert('Your appointment is creted.');
+                    } else {
+                        alert('We can not create appointment on this time, change time.');
+                    }
                 },
                 error => {
-                    alert('bad');
-                    console.log(error)
+                    alert('Server error.');
                 }
             );
     }
@@ -126,40 +138,41 @@ export class AppointmentComponent implements OnInit {
 
         this.transferService.putUser(user)
             .subscribe(
-                (data: any) => {
-                    //check value
-                    alert('good');
-                    console.log('good');
+                (responce: boolean) => {
+                    if (responce) {
+                        alert('User will be notified.');
+                    } else {
+                        alert('Can not notify this user.');
+                    }
                 },
                 error => {
-                    alert('bad');
-                    console.log(error)
+                    alert('Server error.');
                 }
             );
     }
 
     clearInputs() {
-        this.dataStartControl.setValue(""); 
-        this.timeStartControl.setValue("");
-    
-        this.dataEndControl.setValue("");
-        this.timeEndControl.setValue("");
-    
-        //car info
-        this.carYearControl.setValue("");
-        this.carModelControl.setValue("");
-        this.messageControl.setValue("");
-    
-        //personal info
-        this.firstNameControl.setValue(""); 
-        this.secondNameControl.setValue("");
-        this.emailControl.setValue(""); 
-        this.phoneNumberControl.setValue("");
-    
-        //service type
-        this.transmissionCheckboxControl.setValue("");
-        this.vehicleMaintanceCheckboxControl.setValue("");
-        this.vehicleRepairCheckboxControl.setValue("");
-        this.otherCheckboxControl.setValue("");
+        this.dataStartControl.setValue('');
+        this.timeStartControl.setValue('');
+
+        this.dataEndControl.setValue('');
+        this.timeEndControl.setValue('');
+
+        // car info
+        this.carYearControl.setValue('');
+        this.carModelControl.setValue('');
+        this.messageControl.setValue('');
+
+        // personal info
+        this.firstNameControl.setValue('');
+        this.secondNameControl.setValue('');
+        this.emailControl.setValue('');
+        this.phoneNumberControl.setValue('');
+
+        // service type
+        this.transmissionCheckboxControl.setValue('');
+        this.vehicleMaintanceCheckboxControl.setValue('');
+        this.vehicleRepairCheckboxControl.setValue('');
+        this.otherCheckboxControl.setValue('');
     }
 }

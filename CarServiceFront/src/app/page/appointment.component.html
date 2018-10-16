@@ -118,15 +118,13 @@
             <div> YOUR VEHICLE
                 <div fxLayout="row" fxLayoutGap="25px">
                     <div class="input-group-prepend column-size">
-                        <input type="text" [formControl]="carYearControl" class="form-control input-border" placeholder="YEAR OF CAR">
+                        <input type="number" [formControl]="carYearControl" class="form-control input-border" placeholder="YEAR OF CAR">
                     </div>
 
                     <div class="input-group-prepend column-size">
                         <select [formControl]="carModelControl" class="form-control custom-select input-border">
-                            <option value="">SELECT YOUR CAR</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option selected disabled value="">SELECT YOUR CAR</option>
+                            <option *ngFor="let item of carModel" [value]="item">{{item}}</option>
                         </select>
                         <div class="invalid-feedback">Example invalid custom select feedback</div>
                     </div>
@@ -175,7 +173,7 @@
                         <div class="blue-text">CLEAR</div>
                     </button>
 
-                    <button fxLayoutAlign="end none" type="button" class="btn send-button nput-border" (click)="submitAppointment()">
+                    <button fxLayoutAlign="end none" [disabled]="appointmentFormGroup.invalid"  type="button" class="btn send-button nput-border" (click)="submitAppointment()">
                         <div class="white-text">SEND</div>
                     </button>
                 </div>
