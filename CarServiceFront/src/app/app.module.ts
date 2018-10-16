@@ -9,6 +9,7 @@ import { FooterComponent } from './share/footer.component';
 import { HeaderComponent } from './share/header.component';
 import { AppointmentComponent } from './page/appointment.component';
 import { HttpClientModule } from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HttpClientModule,
     FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: 'appointment', component: AppModule },
       { path: '', redirectTo: 'appointment', pathMatch: 'full' },   // default route
