@@ -6,7 +6,18 @@
     font-size: 11px; 
     color: grey;
 }
-
+.error-text{
+    padding-top: 3px;
+    padding-left: 13px;
+    font-size: 9px;
+    color: red;
+}
+.error-mail{
+    margin-top: -4%;
+    padding-left: 13px;
+    font-size: 9px;
+    color: red;
+}
 /* image */
 .picture-size{
     width: 100%
@@ -69,6 +80,7 @@
 
 .column-size{
     width: 200px;
+    height: 40px;
 }
 
 .sign-column-size{

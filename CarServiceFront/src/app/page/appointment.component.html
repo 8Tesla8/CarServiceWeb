@@ -24,12 +24,14 @@
         <!-- DATE & TIME left part -->
         <div> DATE & TIME
             <div fxLayout="row" fxLayoutGap="25px">
-                <div class="input-group-prepend column-size">
+                <div fxLayout="column" class="input-group-prepend column-size">
                     <input type="data" [formControl]="dataStartControl" class="form-control input-border" placeholder="SELECT A DATE">
+                    <div [hidden]="dataStartControl.valid" class="error-text">Data is not a valid</div>                
                 </div>
 
-                <div class="input-group-prepend column-size">
+                <div fxLayout="column" class="input-group-prepend column-size">
                     <input type="time" [formControl]="timeStartControl" class="form-control input-border" placeholder="SELECT A TIME">
+                    <div [hidden]="timeStartControl.valid" class="error-text">Time is not a valid</div>                    
                 </div>
             </div>
 
@@ -141,11 +143,11 @@
                 <div> PERSONAL DETAILS </div>
 
                 <div fxLayout="row" fxLayoutGap="25px">
-                    <div class="input-group-prepend column-size">
+                    <div fxLayout="column" class="input-group-prepend column-size">
                         <input type="text" [formControl]="firstNameControl" class="form-control input-border"
                             placeholder="FIRST NAME">
+                            <div [hidden]="firstNameControl.valid" class="error-text">Enter your name</div>
                     </div>
-
                     <div class="input-group-prepend column-size">
                         <input type="text" [formControl]="secondNameControl" class="form-control input-border"
                             placeholder="SECOND NAME">
@@ -155,8 +157,9 @@
                 <br>
 
                 <div fxLayout="row" fxLayoutGap="25px">
-                    <div class="input-group-prepend column-size">
+                    <div fxLayout="column"  class="input-group-prepend column-size">
                         <input type="text" [formControl]="emailControl" class="form-control input-border" placeholder="EMAIL">
+                        <div [hidden]="emailControl.valid" class="error-text">Email is not a valid</div>
                     </div>
 
                     <div class="input-group-prepend column-size">
@@ -233,7 +236,7 @@
 </div>
 
 <div fxLayoutAlign="center center" fxLayout="row" fxLayoutGap="120px">
-    <div>
+    <div fxLayout="column" fxLayoutGap="10px">
         <div class="input-group mb-3 input-email-size sign-column-size">
             <input type="text" required [formControl]="emailNotifyControl" class="form-control input-border"
                 placeholder="ENTER HERE YOUR EMAIL">
@@ -246,6 +249,7 @@
                 </button>
             </div>
         </div>
+        <div [hidden]="emailNotifyControl.valid" class="error-mail">Email is not a valid</div>
     </div>
 
     <div class="hor-line">&nbsp;</div>
