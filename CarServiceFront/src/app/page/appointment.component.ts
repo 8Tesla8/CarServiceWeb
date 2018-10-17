@@ -78,6 +78,7 @@ export class AppointmentComponent implements OnInit {
         this.appointmentFormGroup.addControl('vehicleRepairCheckboxControl', this.vehicleRepairCheckboxControl);
         this.appointmentFormGroup.addControl('otherCheckboxControl', this.otherCheckboxControl);
 
+
         this.emailNotifyControl.valueChanges.subscribe(
             (value: string) => {
                 if (value === '') {
