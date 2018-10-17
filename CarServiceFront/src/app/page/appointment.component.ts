@@ -16,7 +16,7 @@ export class AppointmentComponent implements OnInit {
     public carModel: Array<string>;
 
     emailNotifyControl = new FormControl('', [Validators.required, Validators.email]);
-
+    hideEmailNotifyError = true;
 
     appointmentFormGroup = new FormGroup({});
 
@@ -77,8 +77,18 @@ export class AppointmentComponent implements OnInit {
         this.appointmentFormGroup.addControl('vehicleMaintanceCheckboxControl', this.vehicleMaintanceCheckboxControl);
         this.appointmentFormGroup.addControl('vehicleRepairCheckboxControl', this.vehicleRepairCheckboxControl);
         this.appointmentFormGroup.addControl('otherCheckboxControl', this.otherCheckboxControl);
-    }
 
+        this.emailNotifyControl.valueChanges.subscribe(
+            (value: string) => {
+                if (value === '') {
+                    this.hideEmailNotifyError = true;
+                } else if (value !== '' && this.emailNotifyControl.invalid) {
+                    this.hideEmailNotifyError = false;
+                } else if (this.emailNotifyControl.valid) {
+                    this.hideEmailNotifyError = true;
+                }
+            });
+    }
 
     submitAppointment() {
         if (this.appointmentFormGroup.invalid) {

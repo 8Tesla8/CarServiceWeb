@@ -29,8 +29,10 @@
                     <div [hidden]="dataStartControl.valid" class="error-text">Data is not a valid</div>                
                 </div>
 
-                <div fxLayout="column" class="input-group-prepend column-size">
-                    <input type="time" [formControl]="timeStartControl" class="form-control input-border" placeholder="SELECT A TIME">
+                <div fxLayout="column">
+                    <div class="input-group-prepend column-size">
+                        <input type="time" [formControl]="timeStartControl" class="form-control input-border" placeholder="SELECT A TIME">
+                    </div>
                     <div [hidden]="timeStartControl.valid" class="error-text">Time is not a valid</div>                    
                 </div>
             </div>
@@ -249,7 +251,7 @@
                 </button>
             </div>
         </div>
-        <div [hidden]="emailNotifyControl.valid" class="error-mail">Email is not a valid</div>
+        <div [hidden]="hideEmailNotifyError" class="error-mail">Email is not a valid</div>
     </div>
 
     <div class="hor-line">&nbsp;</div>
